@@ -1,0 +1,39 @@
+{
+    "image": "ghcr.io/srl-labs/containerlab/devcontainer-dind:0.72.0",
+    "remoteUser": "vscode",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "zsh",
+                "terminal.integrated.profiles.linux": {
+                    "zsh": {
+                        "path": "/bin/zsh"
+                    }
+                }
+            },
+            "extensions": [
+                // go
+                "golang.go",
+                "mhutchie.git-graph",
+                "ms-azuretools.vscode-docker",
+                // Python.
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                // Errors and highlighters.
+                "mechatroner.rainbow-csv",
+                "redhat.vscode-yaml",
+                "jinliming2.vscode-go-template",
+                // markdown
+                "yzhang.markdown-all-in-one",
+                "davidanson.vscode-markdownlint",
+                // proto
+                "pbkit.vscode-pbkit",
+                // containerlab
+                "srl-labs.vscode-containerlab"
+            ]
+        }
+    },
+    "workspaceMount": "source=${localWorkspaceFolder},target=/${containerWorkspaceFolder},type=bind,consistency=cached",
+    "workspaceFolder": "/clab",
+    "postCreateCommand": "echo 'alias clab=\"sudo CLAB_LABDIR_BASE=/var/tmp/clab clab\"' >> ~/.zshrc"
+}
