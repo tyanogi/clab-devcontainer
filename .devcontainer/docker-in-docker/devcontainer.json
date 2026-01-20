@@ -9,7 +9,8 @@
                     "zsh": {
                         "path": "/bin/zsh"
                     }
-                }
+                },
+                "terminal.integrated.fontFamily": "FiraCode Nerd Font, Menlo, Monaco, Cascadia Code, Consolas, Courier New, monospace"
             },
             "extensions": [
                 // go
@@ -35,5 +36,5 @@
     },
     "workspaceMount": "source=${localWorkspaceFolder},target=/${containerWorkspaceFolder},type=bind,consistency=cached",
     "workspaceFolder": "/clab",
-    "postCreateCommand": "echo 'alias clab=\"sudo CLAB_LABDIR_BASE=/var/tmp/clab clab\"' >> ~/.zshrc"
+    "postCreateCommand": "sed -i '/pyenv/d' ~/.zshrc && echo '\nalias clab=\"sudo CLAB_LABDIR_BASE=/var/tmp/clab clab\"' >> ~/.zshrc"
 }

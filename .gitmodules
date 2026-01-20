@@ -1,0 +1,3 @@
+[submodule "srlinux-yang-models"]
+	path = srlinux-yang-models
+	url = https://github.com/nokia/srlinux-yang-models.git
